@@ -1,38 +1,7 @@
 import Button from "@/components/atoms/button";
 import Input from "@/components/atoms/input";
-import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { useAppDispatch, useAppSelector } from "@/components/hooks";
-import { useFormik } from "formik";
-import Link from "next/link";
-import { IAuth } from "@/services/interfaces";
-import authSchema from "@/utils/authSchema";
 
-interface Props {
-	authCredentials: IAuth;
-	handleLogin: (values: IAuth) => void;
-}
-
-function LoginForm({ authCredentials, handleLogin }: Props) {
-	const formik = useFormik({
-		initialValues: {
-			username: "",
-			password: "",
-		} as IAuth,
-
-		validationSchema: authSchema,
-
-		onSubmit: (values: IAuth) => {
-			handleLogin(values);
-			console.log("submitted", values);
-		},
-	});
-
-	useEffect(() => {
-		formik.setFieldValue("username", authCredentials?.username);
-		formik.setFieldValue("password", authCredentials?.password);
-	}, [authCredentials, formik]);
-
+function LoginForm() {
 	return (
 		<>
 			<div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
@@ -43,7 +12,7 @@ function LoginForm({ authCredentials, handleLogin }: Props) {
 				</div>
 
 				<div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-					<form className="space-y-6" onSubmit={formik.handleSubmit}>
+					<form className="space-y-6">
 						<div>
 							<label
 								htmlFor="email"
@@ -56,17 +25,8 @@ function LoginForm({ authCredentials, handleLogin }: Props) {
 									name={"username"}
 									type={"username"}
 									autoComplete={"username"}
-									className={`form-control ${
-										formik.touched.username && formik.errors.username
-											? "border-danger border-3"
-											: "border-secondary-subtle border-1"
-									}`}
-									onChange={formik.handleChange}
-									value={formik.values.username}
+									className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
 								/>
-								{formik.touched.username && formik.errors.username && (
-									<div className="text-danger">{formik.errors.username}</div>
-								)}
 							</div>
 						</div>
 
@@ -83,21 +43,12 @@ function LoginForm({ authCredentials, handleLogin }: Props) {
 									id={"password"}
 									name={"password"}
 									type={"password"}
-									autoComplete={"password"}
-									className={`form-control ${
-										formik.touched.password && formik.errors.password
-											? "border-danger border-3"
-											: "border-secondary-subtle border-1"
-									}`}
-									onChange={formik.handleChange}
-									value={formik.values.password}
+									autoComplete={"password"}									
+									className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
 								/>
-								{formik.touched.password && formik.errors.password && (
-									<span className="text-danger">{formik.errors.password}</span>
-								)}
 							</div>
 						</div>
-						<Link href="/dashboard">Dashboard</Link>
+
 						<div>
 							<Button
 								type={"submit"}
