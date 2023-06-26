@@ -1,9 +1,19 @@
 "use client";
 import HeaderHome from "@/components/molecules/headerDashboard";
 
-export default function Home() {
+
+export default function HomeLayout({
+	children,
+}: {
+	children: React.ReactNode;
+}) {
 	return (
-		<div className="bg-white">
+		// <html lang="en">
+		// 	<body>
+		// 		{children}
+		// 	</body>
+		// </html>
+        <div className="bg-white">
 			<HeaderHome />
 			<div className="relative isolate px-6 pt-14 lg:px-8">
 				<div
@@ -62,6 +72,14 @@ export default function Home() {
 					/>
 				</div>
 			</div>
+            <main>
+					<div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+						{/* Your content */}
+
+						{children}
+					</div>
+				</main>
 		</div>
+        
 	);
 }
