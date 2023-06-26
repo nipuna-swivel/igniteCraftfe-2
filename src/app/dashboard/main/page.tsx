@@ -1,12 +1,14 @@
 "use client";
 import React from 'react'
 
-function Dashboard() {
+function Main() {
   return (
     <div>
-     
+      <h2 className="text-2xl font-bold tracking-tight text-gray-900">
+				Product Analitics
+			</h2>
+  
     </div>
   )
 }
-
-export default Dashboard
+export default Main
