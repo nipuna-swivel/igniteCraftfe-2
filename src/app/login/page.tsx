@@ -1,11 +1,10 @@
 "use client";
-
-import LoginForm from "@/components/organisms/loginForm";
+import LoginTemplate from "@/components/templates/login";
 
 const Login = () => {
 	return (
 		<>
-			<LoginForm />
+			<LoginTemplate />
 		</>
 	);
 };

@@ -1,19 +1,23 @@
 import Button from "@/components/atoms/button";
 import Input from "@/components/atoms/input";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { Alert, Space } from 'antd';
+import { Alert, Space } from "antd";
 
 type Inputs = {
-	username: string,
-	password: string,
-  };
+	username: string;
+	password: string;
+};
 
-function LoginForm() {
-
-	const { register, handleSubmit,watch,formState:{errors} } = useForm();
+function LoginForm({ username, password }: Inputs) {
+	const {
+		register,
+		handleSubmit,
+		watch,
+		formState: { errors },
+	} = useForm();
 	console.log(errors);
-	console.log(watch())
-	const fn= watch('username')
+	console.log(watch());
+	const fn = watch("username");
 	return (
 		<>
 			<div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
@@ -24,9 +28,11 @@ function LoginForm() {
 				</div>
 
 				<div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-					<form className="space-y-6" onSubmit={handleSubmit((data)=>{
-						console.log(data)
-					})}>
+					<form
+						className="space-y-6"
+						onSubmit={handleSubmit((data) => {
+							console.log(data);
+						})}>
 						<div>
 							<label
 								htmlFor="email"
@@ -34,11 +40,10 @@ function LoginForm() {
 								User Name
 							</label>
 							<div className="mt-2">
-	
 								<p className="text-rose-700">{errors.username?.message}</p>
 								<input
-									id={"username"}									
-									{...register('username',{required:'Username required'})}
+									id={"username"}
+									{...register("username", { required: "Username required" })}
 									type={"username"}
 									autoComplete={"username"}
 									className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -55,12 +60,12 @@ function LoginForm() {
 								</label>
 							</div>
 							<div className="mt-2">
-							<p className="text-rose-700">{errors.password?.message}</p>
+								<p className="text-rose-700">{errors.password?.message}</p>
 								<input
 									id={"password"}
-									{...register('password',{required:'Password required'})}
+									{...register("password", { required: "Password required" })}
 									type={"password"}
-									autoComplete={"password"}									
+									autoComplete={"password"}
 									className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
 								/>
 							</div>

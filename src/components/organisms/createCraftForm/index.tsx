@@ -2,8 +2,20 @@ import Button from "@/components/atoms/button";
 import InputBox from "@/components/atoms/input";
 import TextArea from "@/components/atoms/textArea";
 import { PhotoIcon } from "@heroicons/react/24/outline";
+import { useForm, SubmitHandler } from "react-hook-form";
 
 import React from "react";
+
+type Inputs = {
+	title: string;
+	description: string;
+	unitprice: number;
+	qty: number;
+	photoUrl: string;
+
+
+
+};
 
 function CreateCraftForm() {
 	return (
@@ -61,7 +73,7 @@ function CreateCraftForm() {
 								Stock
 							</label>
 							<InputBox
-								name="stock"
+								name="qty"
 								className={
 									" rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
 								}
