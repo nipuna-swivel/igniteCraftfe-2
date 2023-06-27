@@ -3,13 +3,20 @@ import Button from "@/components/atoms/button";
 import Input from "@/components/atoms/input";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { Alert, Space } from "antd";
+import { IAuth } from "@/services/interfaces";
 
 type Inputs = {
 	username: string;
 	password: string;
 };
 
-function LoginForm({ username, password }: Inputs) {
+interface Props {
+	credentials: IAuth;
+	func: (values: IAuth) => void;
+}
+
+
+function LoginForm({ credentials ,func }: Props) {
 	const {
 		register,
 		handleSubmit,
@@ -18,7 +25,10 @@ function LoginForm({ username, password }: Inputs) {
 	} = useForm();
 	console.log(errors);
 	console.log(watch());
-	//const fn = watch("username");
+
+
+
+	
 	return (
 		<>
 			<div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
@@ -31,8 +41,9 @@ function LoginForm({ username, password }: Inputs) {
 				<div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
 					<form
 						className="space-y-6"
-						onSubmit={handleSubmit((data) => {
-							console.log(data);
+						onSubmit={handleSubmit((credentials) => {
+							func(credentials);
+							console.log(credentials);
 						})}>
 						<div>
 							<label

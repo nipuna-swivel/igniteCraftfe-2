@@ -1,7 +1,7 @@
-import http from "@/http.common";
+import {axiosInstence} from "@/http.common";
 
 const login = (authCredentials: string) => {
-	return http.post("/login", authCredentials);
+	return axiosInstence.post("/auth/login", authCredentials);
 };
 
 const AuthService = { login };
