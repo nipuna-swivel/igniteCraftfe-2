@@ -20,17 +20,17 @@ const initialState: IProductState = {
 export const createProduct: any = createAsyncThunk(
 	"product/create",
 	async (
-		{ fname, lname, email, contactNum, gender, photoUrl }: IProduct,
+		{ title, description, imgUrl, unitprice, qty }: IProduct,
 		{ rejectWithValue }
 	) => {
 		try {
 			await ProductDataService.create({
-				fname,
-				lname,
-				email,
-				contactNum,
-				gender,
-				photoUrl,
+				title,
+				description,
+				unitprice,
+				imgUrl,
+				qty,
+				
 			});
 			//AlertService.success("Employee created Success!!", "success");
 		} catch (error: any) {
