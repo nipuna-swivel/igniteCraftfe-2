@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import CreateCraftForm from "@/components/organisms/createCraftForm";
 

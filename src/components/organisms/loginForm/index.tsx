@@ -1,3 +1,4 @@
+"use client";
 import Button from "@/components/atoms/button";
 import Input from "@/components/atoms/input";
 import { useForm, SubmitHandler } from "react-hook-form";
@@ -17,13 +18,13 @@ function LoginForm({ username, password }: Inputs) {
 	} = useForm();
 	console.log(errors);
 	console.log(watch());
-	const fn = watch("username");
+	//const fn = watch("username");
 	return (
 		<>
 			<div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
 				<div className="sm:mx-auto sm:w-full sm:max-w-sm">
 					<h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-						Sign in to your account-{fn}
+						Sign in to your account
 					</h2>
 				</div>
 
@@ -40,7 +41,7 @@ function LoginForm({ username, password }: Inputs) {
 								User Name
 							</label>
 							<div className="mt-2">
-								<p className="text-rose-700">{errors.username?.message}</p>
+								<span className="text-rose-700">{errors.username?.message}</span>
 								<input
 									id={"username"}
 									{...register("username", { required: "Username required" })}
@@ -60,7 +61,7 @@ function LoginForm({ username, password }: Inputs) {
 								</label>
 							</div>
 							<div className="mt-2">
-								<p className="text-rose-700">{errors.password?.message}</p>
+								<span className="text-rose-700">{errors.password?.message}</span>
 								<input
 									id={"password"}
 									{...register("password", { required: "Password required" })}
