@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import CreateCraftForm from "@/components/organisms/createCraftForm";
+import CreateProductTemplate from "@/components/templates/createProduct";
 
 function CreateProduct() {
 	return (
@@ -8,7 +8,7 @@ function CreateProduct() {
 			<h2 className="text-2xl font-bold tracking-tight text-gray-900">
 				Product Details
 			</h2>
-			<CreateCraftForm />
+			<CreateProductTemplate />
 		</div>
 	);
 }
