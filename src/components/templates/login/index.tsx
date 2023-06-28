@@ -3,6 +3,8 @@ import React from "react";
 import LoginForm from "@/components/organisms/loginForm";
 import { useAppDispatch, useAppSelector } from "@/hooks";
 import { Login } from "@/slices/authSlice";
+import Router from 'next/router';
+import context from "antd/es/app/context";
 
 function LoginTemplate() {
 	const dispatch = useAppDispatch();
@@ -15,6 +17,8 @@ function LoginTemplate() {
 			})
 		);
 	};
+
+
 
 	return (
 		<>

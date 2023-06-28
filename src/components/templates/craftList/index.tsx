@@ -1,11 +1,13 @@
 import React from 'react'
+import CratItem from '@/components/organisms/cartItem'
 
-function CraftList() {
+function CraftListTemplate() {
+  //carft item list-home
   return (
     <div>
-      
+      <CratItem/>
     </div>
   )
 }
 
-export default CraftList
+export default CraftListTemplate

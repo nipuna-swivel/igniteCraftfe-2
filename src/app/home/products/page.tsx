@@ -1,10 +1,10 @@
 import React from 'react';
-import CartItem from '@/components/organisms/cartItem'
+import CraftListTemplate from '@/components/templates/craftList';
 
 function ProductList() {
   return (
     <div>
-       <CartItem/>
+       <CraftListTemplate/>
     </div>
   )
 }
