@@ -26,17 +26,6 @@ function classNames(...classes: string[]) {
 	return classes.filter(Boolean).join(" ");
 }
 
-// export default function DashboardLayout({
-// 	children,
-// }: {
-// 	children: React.ReactNode;
-// }) {
-// 	return (
-// 		<html lang="en" className="h-full bg-gray-100">
-// 			<body className="h-full">{children}</body>
-// 		</html>
-// 	);
-// }
 export default function DashboardLayout({
 	children,
 }: {
