@@ -5,3 +5,4 @@ export * from '@/components/templates/dashboard';
 export * from '@/components/templates/craftList';
 export * from '@/components/templates/productOverview';
 export * from '@/components/templates/createProduct';
+export * from '@/components/templates/productList';

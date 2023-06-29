@@ -1,4 +1,5 @@
 import axios from "axios";
+import {store} from "@/store";
 
 export const axiosInstence = axios.create ({
 
@@ -14,7 +15,10 @@ export const axiosInstence = axios.create ({
 // Add a request interceptor
 axiosInstence.interceptors.request.use(function (config) {
   // Do something before request is sent
+  let state =store.getState()
+  config.headers['Authorization'] = `Bearer ${state.auth.jwtToken}`;
   return config;
+  
 }, function (error) {
   // Do something with request error
   return Promise.reject(error);

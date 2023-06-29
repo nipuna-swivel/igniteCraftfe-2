@@ -1,15 +1,16 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import LoginForm from "@/components/organisms/loginForm";
 import { useAppDispatch, useAppSelector } from "@/hooks";
 import { Login } from "@/slices/authSlice";
-import Router from 'next/router';
-import context from "antd/es/app/context";
+import { useRouter } from 'next/navigation'
 
 function LoginTemplate() {
+	const router = useRouter();
 	const dispatch = useAppDispatch();
+	const loggedIn = useAppSelector((state) => state.auth.loggedIn);
 
-	const adminLogin = (data: { username:string, password:string }) => {
+	const adminLogin = (data: { username: string; password: string }) => {
 		dispatch(
 			Login({
 				username: data.username,
@@ -18,11 +19,15 @@ function LoginTemplate() {
 		);
 	};
 
-
+	useEffect(() => {
+		if (loggedIn) {
+			router.push("/dashboard/main");
+		}
+	}, [loggedIn]);
 
 	return (
 		<>
-			<LoginForm func={adminLogin}/>
+			<LoginForm func={adminLogin} />
 		</>
 	);
 }

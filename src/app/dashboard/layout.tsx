@@ -14,11 +14,12 @@ const navigation = [
 	{ name: "Dashboard", href: "/dashboard/main", current: false },
 	{ name: "Add new craft", href: "/dashboard/createProduct", current: false },
 	{ name: "Craft-list", href: "/dashboard/productList", current: false },
+	{ name: "Back To Home", href: "/", current: false },
 ];
 const userNavigation = [
 	{ name: "Your Profile", href: "#" },
 	{ name: "Settings", href: "#" },
-	{ name: "Sign out", href: "#" },
+	{ name: "Sign out", href: "/" },
 ];
 
 function classNames(...classes: string[]) {

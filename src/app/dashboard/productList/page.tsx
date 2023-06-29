@@ -1,6 +1,6 @@
 "use client";
 import React from 'react'
-import ProductItem from '@/components/organisms/productItem'
+import ProductItemDashboard from '@/components/templates/productList';
 
 
 function ProductList() {
@@ -9,7 +9,7 @@ function ProductList() {
       <h2 className="text-2xl font-bold tracking-tight text-gray-900">
 				Product List
 			</h2>
-      <ProductItem/>
+      <ProductItemDashboard/>
     </div>
   )
 }

@@ -34,6 +34,7 @@ export interface IAuthState {
     error:string;	
     successMessage: string;
     jwtToken: string;
+	loggedIn: boolean;
 	
 }
 

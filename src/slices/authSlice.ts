@@ -9,7 +9,8 @@ const initialState: IAuthState = {
     error: "",
     successMessage: "",
     username: "",
-    password: ""
+    password: "",
+	loggedIn: false
 };
 
 export const Login: any = createAsyncThunk(
@@ -37,6 +38,7 @@ const authSlice = createSlice({
 		builder.addCase(Login.fulfilled, (state, action) => {
 			state.loading = false;
 			state.jwtToken = action.payload.access_token;
+			state.loggedIn=true;
 			console.log("action", action)
 			console.log("accessToken", state.jwtToken);
 		});
