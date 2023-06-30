@@ -1,14 +1,15 @@
 "use client";
-import React from 'react'
+import React from "react";
+import DashboardTemplate from "@/components/templates/dashboard";
 
 function Main() {
-  return (
-    <div>
-      <h2 className="text-2xl font-bold tracking-tight text-gray-900">
+	return (
+		<div>
+			<h2 className="text-2xl font-bold tracking-tight text-gray-900">
 				Product Analitics
 			</h2>
-  
-    </div>
-  )
+			<DashboardTemplate />
+		</div>
+	);
 }
-export default Main
+export default Main;
