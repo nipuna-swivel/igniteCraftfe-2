@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
-import Link from "next/link";
 import CheckoutTemplate from "@/components/templates/checkout";
+import CartBox from "@/components/organisms/cartBox";
 
 const product = {
 	name: "Basic Tee 6-Pack",
@@ -107,7 +107,7 @@ export default function ProductOverview() {
 							</div>
 						</div>
 						<form className="mt-10">
-							<CheckoutTemplate setOpen={setOpen} open={open} />
+							
 							<button
 								className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
 								onClick={() => setOpen(true)}>
@@ -117,6 +117,7 @@ export default function ProductOverview() {
 					</div>
 				</div>
 			</div>
+			<CartBox setOpen={setOpen} open={open} />
 		</div>
 	);
 }

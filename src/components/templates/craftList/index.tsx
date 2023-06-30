@@ -1,5 +1,5 @@
 import React from 'react'
-import CratItem from '@/components/organisms/cartItem'
+import CratItem from '@/components/organisms/listItem'
 
 function CraftListTemplate() {
   //carft item list-home

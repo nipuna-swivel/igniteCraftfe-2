@@ -1,6 +1,6 @@
 "use client";
 import React from 'react'
-import CartItem from '@/components/organisms/cartItem'
+import CartItem from '@/components/organisms/listItem'
 
 function Cart() {
   return (
